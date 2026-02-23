@@ -3,13 +3,14 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  server: {
-    port: 5173,
-    proxy: {
-      "/api": {
-        target: "http://127.0.0.1:8000",
-        changeOrigin: true,
-      },
-    },
-  },
+  // server: {
+  //   port: 5173,
+  //   proxy: {
+  //     "/api": {
+  //       target: "http://127.0.0.1:8000",
+  //       changeOrigin: true,
+  //     },
+  //   },
+  // },
+  base: process.env.VITE_BASE_PATH || "/hrms-frontend",
 });
