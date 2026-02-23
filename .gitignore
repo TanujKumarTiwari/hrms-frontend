@@ -1,0 +1,9 @@
+react/node_modules/
+react/dist/
+react/.env
+react/.env.local
+react/.env.development.local
+react/.env.test.local
+react/.env.production.local
+.DS_Store
+Thumbs.db
