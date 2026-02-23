@@ -42,6 +42,23 @@ npm run build
 
 Build output: `frontend/react/dist`
 
+## Deploy React App to Vercel
+
+1. Push this repo to GitHub/GitLab/Bitbucket.
+2. In Vercel, import the repository.
+3. Set project settings:
+   - Framework Preset: `Vite`
+   - Root Directory: `react`
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+4. Add environment variable in Vercel:
+   - `VITE_API_URL=https://your-backend-domain.com`
+5. Deploy.
+
+Notes:
+- The proxy in `react/vite.config.js` is only for local development (`npm run dev`).
+- In production, API calls use `VITE_API_URL` (configured in `react/.env.example`).
+
 ## Legacy Static UI
 
 - Files are under `frontend/static`.

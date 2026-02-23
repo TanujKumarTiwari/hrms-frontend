@@ -1,9 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 
 const today = new Date().toISOString().slice(0, 10);
+const API_BASE_URL = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
 
 async function api(path, options = {}) {
-  const response = await fetch(path, {
+  const url = `${API_BASE_URL}${path}`;
+  const response = await fetch(url, {
     headers: { "Content-Type": "application/json" },
     ...options,
   });
